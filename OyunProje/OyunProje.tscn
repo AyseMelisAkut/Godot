@@ -1,0 +1,836 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Backgrounds/colored_desert.png" type="Texture" id=1]
+[ext_resource path="res://bitis.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Poses/character_femalePerson_walk1.png" type="Texture" id=3]
+[ext_resource path="res://Poses/character_femalePerson_walk0.png" type="Texture" id=4]
+[ext_resource path="res://oyuncu.gd" type="Script" id=5]
+[ext_resource path="res://Poses/character_femalePerson_walk2.png" type="Texture" id=6]
+[ext_resource path="res://tuzak.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Poses/character_femalePerson_walk3.png" type="Texture" id=8]
+[ext_resource path="res://Poses/character_femalePerson_wide.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/star.png" type="Texture" id=11]
+[ext_resource path="res://yıldız.gd" type="Script" id=12]
+[ext_resource path="res://bombalar.gd" type="Script" id=13]
+[ext_resource path="res://Ground/Grass/grassHalf.png" type="Texture" id=29]
+[ext_resource path="res://Ground/Grass/grassLeft.png" type="Texture" id=30]
+[ext_resource path="res://Ground/Grass/grassHalf_left.png" type="Texture" id=31]
+[ext_resource path="res://Ground/Grass/grassCenter.png" type="Texture" id=32]
+[ext_resource path="res://Ground/Grass/grass.png" type="Texture" id=34]
+[ext_resource path="res://Ground/Grass/grassHill_right.png" type="Texture" id=37]
+[ext_resource path="res://Ground/Grass/grassHalf_mid.png" type="Texture" id=38]
+[ext_resource path="res://Ground/Grass/grassHill_left.png" type="Texture" id=39]
+[ext_resource path="res://Ground/Grass/grassMid.png" type="Texture" id=41]
+[ext_resource path="res://Ground/Grass/grassRight.png" type="Texture" id=42]
+[ext_resource path="res://Ground/Grass/grassHalf_right.png" type="Texture" id=43]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "yuruyor",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "duruyor",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 27.0759
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 13.6015, 26.192 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 7.39008
+height = 28.6603
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="TileSet" id=18]
+0/name = "grass.png 0"
+0/texture = ExtResource( 34 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 7 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "grassCenter.png 1"
+1/texture = ExtResource( 32 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 8 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "grassHalf.png 2"
+2/texture = ExtResource( 29 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 128, 72 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 10 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "grassHalf_left.png 3"
+3/texture = ExtResource( 31 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 128, 72 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 11 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "grassHalf_mid.png 4"
+4/texture = ExtResource( 38 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 128, 72 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 12 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "grassHalf_right.png 5"
+5/texture = ExtResource( 43 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 128, 72 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 13 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "grassHill_left.png 6"
+6/texture = ExtResource( 39 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 128, 128 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 14 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "grassHill_right.png 7"
+7/texture = ExtResource( 37 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 128, 128 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 15 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "grassLeft.png 8"
+8/texture = ExtResource( 30 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 128, 128 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 16 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "grassMid.png 9"
+9/texture = ExtResource( 41 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 128, 128 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 17 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "grassRight.png 10"
+10/texture = ExtResource( 42 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 128, 128 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 9 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 1146.67, 31.1372 )
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 20.3932
+
+[node name="oyun" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="arkaplan" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 512.543, 515.249 )
+scale = Vector2( 1.00551, 1.00551 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 55.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="oyuncu" type="KinematicBody2D" parent="."]
+position = Vector2( 110.846, 780.341 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="oyuncuSprite" type="AnimatedSprite" parent="oyuncu"]
+position = Vector2( 36.8627, 116.94 )
+frames = SubResource( 3 )
+animation = "duruyor"
+speed_scale = 2.0
+playing = true
+flip_h = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oyuncu"]
+visible = false
+position = Vector2( 34.2954, 112.133 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="oyuncu"]
+visible = false
+position = Vector2( 36.9543, 154.047 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="oyuncu"]
+visible = false
+position = Vector2( 63.1496, 143.524 )
+rotation = 1.94896
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="oyuncu"]
+visible = false
+position = Vector2( 11.4581, 145.397 )
+rotation = 4.1974
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="oyuncu"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = 0
+limit_top = -100
+limit_right = 1000
+limit_bottom = 1033
+smoothing_enabled = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 18 )
+format = 1
+tile_data = PoolIntArray( 65545, 2, 0, 196621, 2, 0, 393220, 3, 0, 393222, 4, 0, 393224, 5, 0, 589824, 5, 0, 655368, 2, 0, 720899, 2, 0, 786444, 3, 0, 786446, 4, 0, 983040, 9, 0, 983042, 9, 0, 983044, 10, 0, 983050, 8, 0, 983052, 9, 0, 983054, 9, 0 )
+
+[node name="zemin" type="Area2D" parent="."]
+position = Vector2( 515.151, 1061.48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
+shape = SubResource( 19 )
+
+[node name="yıldızlar" type="Node" parent="."]
+
+[node name="yıldız" type="Area2D" parent="yıldızlar"]
+position = Vector2( 366.387, 784.363 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız2" type="Area2D" parent="yıldızlar"]
+position = Vector2( 971.937, 602.155 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız2"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız2"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız3" type="Area2D" parent="yıldızlar"]
+position = Vector2( 145.715, 427.323 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız3"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız3"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız4" type="Area2D" parent="yıldızlar"]
+position = Vector2( 363.898, 227.914 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız4"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız4"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız5" type="Area2D" parent="yıldızlar"]
+position = Vector2( 489.691, 527.273 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız5"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız5"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız6" type="Area2D" parent="yıldızlar"]
+position = Vector2( 1018.91, 25.5814 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız6"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız6"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız7" type="Area2D" parent="yıldızlar"]
+position = Vector2( 914.079, 797.086 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız7"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız7"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız8" type="Area2D" parent="yıldızlar"]
+position = Vector2( 814.387, 352.363 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız8"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız8"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız9" type="Area2D" parent="yıldızlar"]
+position = Vector2( 133.219, -21.5569 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız9"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız9"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız10" type="Area2D" parent="yıldızlar"]
+position = Vector2( 708.673, 65.4252 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız10"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız10"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız11" type="Area2D" parent="yıldızlar"]
+position = Vector2( 524.465, -94.7556 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız11"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız11"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız12" type="Area2D" parent="yıldızlar"]
+position = Vector2( 108.299, 229.436 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız12"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız12"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız13" type="Area2D" parent="yıldızlar"]
+position = Vector2( 312.259, 560.039 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız13"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız13"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız14" type="Area2D" parent="yıldızlar"]
+position = Vector2( 674.298, 701.46 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız14"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız14"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız15" type="Area2D" parent="yıldızlar"]
+position = Vector2( 69.4587, 663.395 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız15"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız15"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="yıldız16" type="Area2D" parent="yıldızlar"]
+position = Vector2( 1013.81, 266.09 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="yıldızlar/yıldız16"]
+position = Vector2( -37.4099, 109.701 )
+scale = Vector2( 0.683653, 0.663119 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yıldızlar/yıldız16"]
+visible = false
+position = Vector2( -37.36, 112.11 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bombalar" type="Node2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="bombalar"]
+
+[node name="tuzaklar" type="Node2D" parent="."]
+
+[node name="tuzak" parent="tuzaklar" instance=ExtResource( 7 )]
+position = Vector2( 37.5256, 513.015 )
+
+[node name="tuzak2" parent="tuzaklar" instance=ExtResource( 7 )]
+position = Vector2( 952.649, 895.939 )
+
+[node name="tuzak3" parent="tuzaklar" instance=ExtResource( 7 )]
+position = Vector2( 433.065, 320.016 )
+
+[node name="bitis" parent="." instance=ExtResource( 2 )]
+position = Vector2( 639.96, 4.29877 )
+[connection signal="body_entered" from="zemin" to="oyuncu" method="_on_zemin_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız" to="yıldızlar/yıldız" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız2" to="yıldızlar/yıldız2" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız3" to="yıldızlar/yıldız3" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız4" to="yıldızlar/yıldız4" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız5" to="yıldızlar/yıldız5" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız6" to="yıldızlar/yıldız6" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız7" to="yıldızlar/yıldız7" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız8" to="yıldızlar/yıldız8" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız9" to="yıldızlar/yıldız9" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız10" to="yıldızlar/yıldız10" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız11" to="yıldızlar/yıldız11" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız12" to="yıldızlar/yıldız12" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız13" to="yıldızlar/yıldız13" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız14" to="yıldızlar/yıldız14" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız15" to="yıldızlar/yıldız15" method="_on_yldz_body_entered"]
+[connection signal="body_entered" from="yıldızlar/yıldız16" to="yıldızlar/yıldız16" method="_on_yldz_body_entered"]
+[connection signal="timeout" from="bombalar/Timer" to="bombalar" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="tuzaklar/tuzak" to="oyuncu" method="_on_tuzak_body_entered"]
+[connection signal="body_entered" from="tuzaklar/tuzak2" to="oyuncu" method="_on_tuzak_body_entered"]
+[connection signal="body_entered" from="tuzaklar/tuzak3" to="oyuncu" method="_on_tuzak_body_entered"]
+[connection signal="body_entered" from="bitis" to="oyuncu" method="_on_bitis_body_entered"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://bomba.gd" type="Script" id=2]
+[ext_resource path="res://Tiles/bomb.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.0719
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.445026, 0.937173 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.90625, 0.215666, 0.102661, 1, 0.899861, 0.90625, 0.088501, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.525 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[node name="bomba" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.690641, 0.663019 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.746536, 8.15904 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, -0.81656 )
+scale = Vector2( 1.3, 1.3 )
+amount = 70
+process_material = SubResource( 6 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+[connection signal="body_entered" from="." to="." method="_on_bomba_body_entered"]
